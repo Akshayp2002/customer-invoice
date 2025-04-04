@@ -52,10 +52,6 @@ class AuthController extends Controller
                 'email'    => $request->email,
                 'password' => Hash::make($request->password),
             ]);
-            Account::create([
-                'user_id'        => $user->id,
-                'account_number' => rand(1000000000, 9999999999)
-            ]);
 
             // Auto-login after registration
             Auth::login($user);
