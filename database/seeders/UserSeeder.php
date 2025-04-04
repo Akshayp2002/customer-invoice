@@ -38,11 +38,6 @@ class UserSeeder extends Seeder
                 'password' => Hash::make($userData['password']),
             ]);
 
-            // Create the account for the user
-            $user->account()->create([
-                'account_number' => '123456789' . $userData['account_suffix'],
-                'balance' => 100,
-            ]);
         }
     }
 }

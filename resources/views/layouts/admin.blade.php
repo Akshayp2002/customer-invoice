@@ -14,35 +14,36 @@
                 </h3>
 
                 <a href="{{ route('admin.dashboard') }}"
-                    class="flex items-center px-6 py-2.5 text-gray-500 hover:text-orange-600 group">
-                    <svg class="h-5 w-5 text-gray-400 mr-2 group-hover:text-orange-500" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
+                    class="flex items-center px-6 py-2.5 {{ request()->route()->getName() === 'admin.dashboard' ? 'text-orange-600' : 'text-gray-500 hover:text-orange-600' }} group">
+                    <svg class="h-5 w-5 mr-2 {{ request()->route()->getName() === 'admin.dashboard' ? 'text-orange-500' : 'text-gray-400 group-hover:text-orange-500' }}"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                     </svg>
                     Home
                 </a>
+
                 <a href="{{ route('admin.handlegetRequest', ['type' => 'customer']) }}"
-                    class="flex items-center px-6 py-2.5 text-gray-500 hover:text-orange-600 group">
-                    <svg class="h-5 w-5 text-gray-400 mr-2 group-hover:text-orange-500" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    class="flex items-center px-6 py-2.5 {{ request()->query('type') === 'customer' ? 'text-orange-600' : 'text-gray-500 hover:text-orange-600' }} group">
+                    <svg class="h-5 w-5 mr-2 {{ request()->query('type') === 'customer' ? 'text-orange-500' : 'text-gray-400 group-hover:text-orange-500' }}"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
                         </path>
                     </svg>
                     Customer
                 </a>
+
                 <a href="{{ route('admin.handlegetRequest', ['type' => 'invoice']) }}"
-                    class="flex items-center px-6 py-2.5 text-gray-500 hover:text-orange-600 group">
-                    <svg class="h-5 w-5 text-gray-400 mr-2 group-hover:text-orange-500" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    class="flex items-center px-6 py-2.5 {{ request()->query('type') === 'invoice' ? 'text-orange-600' : 'text-gray-500 hover:text-orange-600' }} group">
+                    <svg class="h-5 w-5 mr-2 {{ request()->query('type') === 'invoice' ? 'text-orange-500' : 'text-gray-400 group-hover:text-orange-500' }}""
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
                         </path>
                     </svg>
                     Invoice
                 </a>
-
 
 
             </div>
